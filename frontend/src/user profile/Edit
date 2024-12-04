@@ -1,0 +1,38 @@
+// import * as React from 'react';
+// import Stack from '@mui/material/Stack';
+// import Button from '@mui/material/Button';
+// import { useState } from 'react';
+
+// export default function ColorButtons() {
+//   const [selectedGender, setSelectedGender] = useState(null); // Track the selected gender
+
+//   const handleGenderChange = (gender) => {
+//     setSelectedGender(gender); // Update the selected gender
+//   };
+
+//   return (
+//     <Stack direction="row" spacing={2}>
+//       <Button
+//         variant={selectedGender === 'Male' ? 'contained' : 'outlined'}
+//         color="success"
+//         onClick={() => handleGenderChange('Male')}
+//       >
+//         Male
+//       </Button>
+//       <Button
+//         variant={selectedGender === 'Female' ? 'contained' : 'outlined'}
+//         color="success"
+//         onClick={() => handleGenderChange('Female')}
+//       >
+//         Female
+//       </Button>
+//       <Button
+//         variant={selectedGender === 'Others' ? 'contained' : 'outlined'}
+//         color="success"
+//         onClick={() => handleGenderChange('Others')}
+//       >
+//         Others
+//       </Button>
+//     </Stack>
+//   );
+// }

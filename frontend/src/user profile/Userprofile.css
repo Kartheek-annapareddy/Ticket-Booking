@@ -1,0 +1,80 @@
+.user-details-container{
+  width: 100%;
+  height:fit-content;
+  border:1px solid black;
+  border-radius: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.username-heading p{
+  width: 100%;
+  height: 100px;
+  align-content:center;
+  padding-left: 28%;
+  color: white;
+  font-weight: bolder;
+  font-size: 32px;
+  background:linear-gradient(to right,rgb(10, 10, 69),rgb(105, 19, 67),rgb(232, 65, 98));
+}
+.account-details p{
+   width: 100%;
+   height: 50px;
+   font-weight:200px;
+   font-size: 28px;
+   padding-left:9%;
+}
+.account-email-details{
+    height: 80px;
+    font-size: 20px;
+    font-weight: 100px;
+}
+.pencil-icon{
+    font-size:15px;
+}
+.user-profile-details-personal{
+  width: 100%;
+  height: fit-content;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.personal-details{
+  height: 100px;
+  font-size: 28px;
+  font-weight: 100px;
+  align-content: center;
+  padding-left: 10%;
+}
+.personal-details-frist-name{
+  font-size: 20px;
+}
+.personal-details-frist-name-value input{
+  width: 80%;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  border:1px solid rgba(0, 0, 0, 0.381)
+}
+.row-container{
+  height: 80px;
+}
+.personal-details-frist-name-value input::placeholder{
+  color: black;
+  font-size: 18px;
+  padding-left: 2px;
+}
+.personal-details-identity-value{
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.user-adress-details{
+  width: 100%;
+  height: fit-content;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+}

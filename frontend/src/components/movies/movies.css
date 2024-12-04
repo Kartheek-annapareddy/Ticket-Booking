@@ -1,0 +1,78 @@
+.movies-img-title-container{
+    width: 18%;
+    height: 440px ;
+    margin-right: 1%;
+
+}
+.movies-img-container{
+    width: 100%;
+    height: 385px;
+    border: 1px solid rgba(0, 0, 0, 0.352);
+    border-radius: 15px;
+    overflow: hidden;
+}
+.movies-votes{
+    height: 35px;
+    background-color: black;
+    color:white;
+    font-size: 20px;
+    word-spacing: 6px;
+    padding-left: 10px;
+}
+.star-icon{
+    color: red;
+}
+.recomended-movies-container{
+    width:204%;
+    height: fit-content;
+    display: flex;
+    flex-direction:row; 
+    transition: 1s linear;
+}
+.recomended-movies-display{
+    width: 94%;
+    overflow: hidden;
+    margin-left: 3%;
+    margin-right: 3%;  
+}
+.Recomended-movies{
+    margin-top: 50px;
+    padding:0px;
+    position: relative;
+}
+.Recomended-movies-heading{
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+.pre-btn-rm{
+    position: absolute;
+    top:50%;
+    left:1.5%;
+    background-color:rgba(128, 114, 114, 0.797);
+    font-size: 25px;
+    color:white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; 
+    text-align: center;   
+}
+.next-btn-rm{
+    position: absolute;
+    top:50%;
+    right:1.5%;
+    background-color:rgba(128, 114, 114, 0.797);
+    font-size: 25px;
+    color:white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;  
+    text-align: center;  
+}
+
+.movies-title-container{
+    width: 100%;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+    font-weight:bold;
+}

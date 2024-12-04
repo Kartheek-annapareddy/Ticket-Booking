@@ -1,0 +1,56 @@
+.account-details{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 30px;
+    height:fit-content;
+}
+.account-details input{
+    width: 80%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid black;
+    padding-left: 10px;
+}
+.account-details-block{
+    min-height: 60px;
+    max-height: fit-content;
+ 
+}
+.personal-details{
+    border:1px solid black;
+    border-radius: 10px;
+    margin-top: 30px;
+    height: fit-content;
+}
+.personal-details input{
+    width: 80%;
+    height:fit-content;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+.account-details textarea{
+  width: 80%;
+  height:90px;
+}
+.favourate-geners{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 30px;
+    height: 200px;
+}
+
+.display-button{
+    max-width: 100%;
+    min-width: 20%;
+    margin-top: 20px;
+    text-align: center;
+    position: sticky;
+    bottom: 0px;
+}
+
+.gener-details{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 30px;
+    height:fit-content;
+}
