@@ -1,4 +1,4 @@
-var myreducer=( state={data:{},location:''},action)=>{
+var myreducer=( state={data:[],location:{city:'',language:['empty']}},action)=>{
     var newstate;
     if(action.type==='movies-title'){
      newstate={
@@ -6,7 +6,7 @@ var myreducer=( state={data:{},location:''},action)=>{
         data:action.payload
      }
     }
-    else if(action.type==='location'){
+     else if(action.type==='location'){
         newstate={
             ...state,
             location:action.payload

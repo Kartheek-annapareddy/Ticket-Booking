@@ -35,7 +35,8 @@ function Login({getloginpopoff}) {
             Email:"",
             password:"" 
         })
-        navigate('/')
+        getloginpopoff();
+        // navigate('/')
         localStorage.setItem('Email',logindata.Email)
         localStorage.setItem('User_id',User_id)
         // var actionobj=actionCreater(logindata.username,res.data.status)  

@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Homepgae/Navbar';
 import { useSelector } from 'react-redux';
+import { Snackbar ,Alert} from '@mui/material';
 import './Selectedmovie.css';
 import Searchicons from '../Homepgae/Searchicons';
 import getAllMovies from '../../tmdb/tmdbmovies';
@@ -11,14 +12,18 @@ function Selectedmovie() {
   const { id } = useParams();
   var [moviedata, setmoviedata] = useState('')
   var [intrest, setintrest] = useState(0)
-  var[selectedMovie,setSelectedMovie]=useState([])
+  var [rejectmovie,setrejectmovie]=useState('')
+  
+  var Navigate=useNavigate()
+ 
+  var language=useSelector((store)=>{
+    return store.location.language
 
-  var language =useSelector((store)=>{ 
-    // console.log(store.location.language)
-     return store}) //extracting the language from the redux store
-  console.log(language)
+  })
+ console.log(language)
 
-
+ 
+  
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=41c953dc7d1c21d27df7b693e9740a3c`)
       .then((res) => {
@@ -27,7 +32,6 @@ function Selectedmovie() {
       }).catch((err) => { console.log(err) })
   }, [id])
   
- 
 
   function getintrestcall() {
     if (intrest === 0) {
@@ -37,7 +41,27 @@ function Selectedmovie() {
       setintrest(0);
     }
   }
+ 
+   function handleClose(){
+    setrejectmovie('')
+   }
 
+   function getmovierejectcall(moviedata){
+   
+   if(language.length===1){
+    console.log('get')
+     setrejectmovie('notlocated')
+   }
+   else if(language.includes(moviedata.original_language)){
+     Navigate('/')
+    }
+    else if(language.length===2){
+      setrejectmovie('notvalid')
+    }
+  }
+
+    
+   
   return (
     <div>
       <Navbar />
@@ -56,7 +80,7 @@ function Selectedmovie() {
                 <h1>{moviedata.title}</h1>
                 <div className='selectedmovie-title-votes'>{moviedata.vote_average === 0 ? (<><div className='d-flex flex-column mx-3'><p style={{ fontSize: '19px', marginTop: '10px' }}><i class="bi bi-hand-thumbs-up-fill" style={{ color: 'green' }}></i>{intrest === 1 ? ('You & 108 k are intrested') : ('108 k are intrested')}</p><p style={{ fontSize: '12px', marginTop: '-15px' }}>{intrest === 1 ? ("We'll notify you when it releases") : ('Are you instreted in this movie?')}</p></div><div className='mx-4 my-2'><button onClick={getintrestcall} style={{ marginLeft: '38px', marginTop: '10px', backgroundColor: 'white', borderRadius: '10px', padding: '3px' }}>{intrest === 1 ? "undo" : "I'm intrested"}</button></div></>) : (<div className='rate-vote-container'><div className='voting-layout'><h4><i class="bi bi-star-fill moviedetails-star-icon"></i> {moviedata.vote_average ? `${moviedata.vote_average.toFixed(1)}/10` : null}</h4> <h4>({`${moviedata.vote_count}k votes`})</h4 ></div><div className='rate-button-container'><button className='rate-button'>Rate</button></div></div>)}</div>
                 <div className='genere-details'><p>{Math.floor(moviedata.runtime / 60)}hr {(moviedata.runtime % 60).toFixed(0)}min</p>.<p> {moviedata.genres ? moviedata.genres.map((gen) => { return gen.name }).join(' / ') : null} </p>.<p>{moviedata.release_date}</p></div>
-                <div className='booktickets'><button>Book Tickets</button></div>
+                <div className='booktickets'><button onClick={()=>{getmovierejectcall(moviedata)}}>Book Tickets</button></div>
               </div>
               <div className='col-4'></div>
             </div>
@@ -73,6 +97,21 @@ function Selectedmovie() {
           </div>
         </div>
       </div>
+
+      <div>
+                {rejectmovie ?
+                    <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+                        <Alert
+                            onClose={handleClose}
+                            severity={rejectmovie==='notvalid' ? 'error' : 'success'}
+                            variant="filled"
+                            sx={{ width: '100%' }} >
+                            {
+                               rejectmovie==='notvalid'?<div>there is no watch options at this location</div>:<div>'please select the location'</div>
+                            }
+                        </Alert>
+                    </Snackbar> : null}
+            </div>
 
     </div>
   )

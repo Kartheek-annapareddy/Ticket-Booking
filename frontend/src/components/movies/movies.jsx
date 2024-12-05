@@ -45,7 +45,7 @@ function Movies() {
   var movietitles=moviesdata.map((ele)=>{
     return({title:ele.title,id:ele.id})
   })
-
+  
   var actionobj=actionCreater(movietitles)
   store.dispatch(actionobj)
 
