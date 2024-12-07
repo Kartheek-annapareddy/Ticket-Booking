@@ -13,6 +13,7 @@ import Userprofile from './user profile/Userprofile';
 import Editprofile from './user profile/Editprofile';
 import ClippedDrawer from './Offcanva/ClippedDrawer';
 import Changepassword from './Accounts/Changepassword';
+import Threatercomponent from './Threatercomponent/ThreatorList.jsx';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +29,7 @@ function App() {
       <Route path='/:id' element={<Selectedmovie/>}/>
       <Route path='/user-details' element={<Editprofile/>}/>
       <Route path='/Account&Settings' element={<Changepassword/>}/>
+      <Route path='/threaters/:bookingcity/:id' element={<Threatercomponent/>}/>
     </Routes>
     {/* <Userprofile/> */}
     {/* <ClippedDrawer/> */}

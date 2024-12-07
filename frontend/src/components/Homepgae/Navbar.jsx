@@ -170,7 +170,6 @@ var moviearray=moviesname.filter((ele) => ele.title.toLowerCase().includes(searc
   }
 
   
-
   function getuserdetailscall() {
     if (userprofile == 0) {
       setuserprofile(1)
@@ -259,7 +258,7 @@ var moviearray=moviesname.filter((ele) => ele.title.toLowerCase().includes(searc
 
       <div className='Login-popup'>
         {
-          loginicon === 1 ? <div style={{ position: 'absolute', top: '0px', zIndex: 6 }}><Login getloginpopoff={getloginpopoff} /></div> : null
+          loginicon === 0 ? <div style={{ position: 'relative', top: '0px', zIndex:6,transform:'scale(0)',transition:'0.2s linear'}}><Login getloginpopoff={getloginpopoff} /></div>:<div style={{ position: 'relative',top:'-60px', zIndex:6,transform:'scale(1)',transition:'0.2s linear'}}><Login getloginpopoff={getloginpopoff} /></div>
         }
       </div>
     </div>

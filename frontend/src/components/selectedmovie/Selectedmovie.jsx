@@ -16,11 +16,13 @@ function Selectedmovie() {
   
   var Navigate=useNavigate()
  
-  var language=useSelector((store)=>{
-    return store.location.language
+  var location=useSelector((store)=>{
+    return store.location
 
   })
- console.log(language)
+  var language=location.language
+  var bookingcity=location.city
+
 
  
   
@@ -53,7 +55,7 @@ function Selectedmovie() {
      setrejectmovie('notlocated')
    }
    else if(language.includes(moviedata.original_language)){
-     Navigate('/')
+     Navigate(`/threaters/${bookingcity}/${id}`)
     }
     else if(language.length===2){
       setrejectmovie('notvalid')

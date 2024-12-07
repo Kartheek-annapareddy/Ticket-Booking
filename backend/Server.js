@@ -1,10 +1,9 @@
-// VITE vX.X.X  ready in X ms  .
 const express = require('express');
 const mysql = require("mysql")
 
 
 const app = express();
-const port = 5009;
+const port = 7409;
 const cors = require('cors');
 app.use(cors())
 app.use(express.json())
@@ -144,7 +143,7 @@ app.get('/userprofile/:User_id',(req,res)=>{
                var userdata = result[0]
                server.query(getgenerdata,[User_id],(genererr,result2)=>{
                   if(genererr){
-                     console.log(22222)
+                     // console.log(22222)
                       return (res.status(400).json({status:'false',message:'error in fetching generdetails'}))
                   }
                   else{
