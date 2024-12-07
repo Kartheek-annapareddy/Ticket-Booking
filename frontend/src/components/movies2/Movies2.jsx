@@ -24,12 +24,12 @@ function Movies2() {
    var locationdata =useSelector((store)=>{return store.location.city})
   //  console.log(locationdata)
  
-   var teluguMovies=moviesdata.filter((ele)=>{return ele.original_language==="te"})//12//13
-   var tamilMovies=moviesdata.filter((ele)=>{return ele.original_language==='ta'})//30//13
-   var hindiMovies=moviesdata.filter((ele)=>{return ele.original_language==='hi'})//25//12
-   var kanadaMovies=moviesdata.filter((ele)=>{return ele.original_language==='kn'})
-   var malluMovies=moviesdata.filter((ele)=>{return ele.original_language==='ml'})
-   var englishMovies=moviesdata.filter((ele)=>{return ele.original_language==='en'})
+   const teluguMovies=moviesdata.filter((ele)=>{return ele.original_language==="te"})//12//13
+   const tamilMovies=moviesdata.filter((ele)=>{return ele.original_language==='ta'})//30//13
+   const hindiMovies=moviesdata.filter((ele)=>{return ele.original_language==='hi'})//25//12
+   const kanadaMovies=moviesdata.filter((ele)=>{return ele.original_language==='kn'})
+   const malluMovies=moviesdata.filter((ele)=>{return ele.original_language==='ml'})
+   const englishMovies=moviesdata.filter((ele)=>{return ele.original_language==='en'})
 
 
 

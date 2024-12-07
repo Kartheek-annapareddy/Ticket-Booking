@@ -3,7 +3,7 @@ function threatercall(location){
     if(location==='Vijayawada'){
         return axios.get('https://mocki.io/v1/35655b55-477f-49fd-88ee-6b67cae1821b')    
     }
-    else if (location==='hyderabadh'){
+    else if (location==='Hyderabad'){
         return axios.get('https://mocki.io/v1/51b88977-65bf-4256-b552-670e111e7d3c')
     }
     else if(location==='Delhi'){
