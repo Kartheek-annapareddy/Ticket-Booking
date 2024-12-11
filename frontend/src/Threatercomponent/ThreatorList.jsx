@@ -11,6 +11,8 @@ import dates from './dates.js'
 function Threatercomponent() {
     const [moviedata, setmoviedata] = useState({})
     const [datesopen, setdatesopen] = useState(0)
+    const[threaterlist,setThreaterlist]=useState([])
+
     const { bookingcity, id } = useParams();
     // console.log(bookingcity)
     // var[location,setlocation]=useState({})
@@ -31,7 +33,8 @@ function Threatercomponent() {
     useEffect(() => {
 
         threatercall(bookingcity).then((res) => {
-            // console.log(res.data)
+            console.log(res.data)
+            setThreaterlist(res.data)
         }).catch((err) => {
             console.log(err)
         })
@@ -39,13 +42,14 @@ function Threatercomponent() {
         if (id) {
             axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=41c953dc7d1c21d27df7b693e9740a3c`)
                 .then((res) => {
-                    console.log(res.data.spoken_languages)
+                    console.log(res.data.spoken_languages[0].english_name)
                     setmoviedata(res.data)
 
                 }
                 ).catch((err) => { console.log(err) })
         }
     }, [])
+    // console.log(moviedata)
     return (
         <div>
             <Navbar />
@@ -53,7 +57,7 @@ function Threatercomponent() {
             <div>
                 <div className='row'>
                     <div className='col-12 movie-header'>
-                        {moviedata ? <p>{moviedata.title}</p> : null}
+                        {moviedata ? <><p>{moviedata.title}</p></>: null}
                     </div>
                 </div>
                 <div className='row'>
@@ -74,11 +78,28 @@ function Threatercomponent() {
                                 }
                             </div>
                             <div className='post-date-button' onClick={()=>{getdateshandle(1)}}><i class="bi bi-chevron-right"></i></div>
-                        </div>
+                        </div>               
                     </div>
                 </div>
             </div>
 
+          <div className='row'>
+            <div className='col-12 d-flex flex-column'>
+                <div className='container mt-5'>
+                {
+                   threaterlist.map((ele)=>{
+                    return(
+                        <div className='w-100 theater-layout'>
+                        
+                        <div className=''><i class="bi bi-heart"></i> <b>{ele.theater}</b></div>
+                        <div>info</div>
+                        </div>
+                    )
+                   })
+                }
+                </div>
+            </div>
+          </div>
         </div>
     )
 }
