@@ -14,6 +14,7 @@ import Editprofile from './user profile/Editprofile';
 import ClippedDrawer from './Offcanva/ClippedDrawer';
 import Changepassword from './Accounts/Changepassword';
 import Threatercomponent from './Threatercomponent/ThreatorList.jsx';
+import SeatLayout from './components/Seatlayout/Seatlayout.jsx';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -34,8 +35,8 @@ function App() {
     {/* <Userprofile/> */}
     {/* <ClippedDrawer/> */}
     {/* <Changepassword/> */}
+    {/* <SeatLayout/> */}
     </>
   );
 }
-
 export default App;

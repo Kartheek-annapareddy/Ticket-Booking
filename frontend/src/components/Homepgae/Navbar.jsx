@@ -185,16 +185,16 @@ var moviearray=moviesname.filter((ele) => ele.title.toLowerCase().includes(searc
   return (
     <div className='container-fluid nav-bar-container'>
       <div className='row'>
-        <div className='col-2 navbar-logo '><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc24uoiO9o95saxJEfckq-SH37rPT5VvbPsw&s' width={'70%'} height={'100%'} /></div>
-        <div className='col-5' style={{ position: 'relative' }}><input className='search-movies' type='text' placeholder='Search movies' value={searchvalue} onChange={handlesearchname} /><i className="bi bi-search search-mirror"></i></div>
+        <div className='col-lg-2 col-md-2 col-2 navbar-logo '><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc24uoiO9o95saxJEfckq-SH37rPT5VvbPsw&s' width={'70%'} height={'100%'} /></div>
+        <div className='col-lg-5 col-md-3 col-3' style={{ position: 'relative' }}><input className='search-movies' type='text' placeholder='Search movies' value={searchvalue} onChange={handlesearchname} /><i className="bi bi-search search-mirror"></i></div>
 
         <div className='col-1'></div>
-        <div className='col-2'>
+        <div className='col-4 col-lg-2 col-md-4'>
           <div className='navbar-location'>
             <div onClick={() => { showlocbar(isactive) }}>{city}</div>
             <div onClick={() => { showlocbar(isactive) }}><i className="bi bi-chevron-down"></i></div>
           </div></div>
-        <div className='col-2'>
+        <div className='col-2 col-lg-2 col-md-2'>
           <div className='navbar-profile'>
             {
               username.length === 0 ? <div><button className='nav-login-button' onClick={getlogincall}>sign in</button></div>

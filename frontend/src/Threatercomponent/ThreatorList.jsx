@@ -49,6 +49,7 @@ function Threatercomponent() {
                 ).catch((err) => { console.log(err) })
         }
     }, [])
+    console.log(threaterlist)
     // console.log(moviedata)
     return (
         <div>
@@ -85,14 +86,25 @@ function Threatercomponent() {
 
           <div className='row'>
             <div className='col-12 d-flex flex-column'>
-                <div className='container mt-5'>
+                <div className='container-fluid m-5 mt-5' style={{borderBottom:'2px solid black',width:'95%'}}>
                 {
                    threaterlist.map((ele)=>{
                     return(
-                        <div className='w-100 theater-layout'>
-                        
-                        <div className=''><i class="bi bi-heart"></i> <b>{ele.theater}</b></div>
-                        <div>info</div>
+                        <div className='row w-100 theater-layout' style={{boxShadow:'0 0 2px 0 black',padding:'20px',marginBottom:'1px',height:'100px'}}>
+                        <div className='col-lg-4 col-md-5 col-6'>
+                        <div className='d-flex flex-direction-row justify-content-between' > <p><i class="bi bi-heart"></i> <b>{ele.theater}</b></p>  <p><i class="bi bi-info-circle"></i>info</p></div>
+                        <div className='ps-4 '><p>{ele.features.sound_system}{ele.features.projection}</p></div>
+                        </div>
+                        <div className='col-lg-5 col-md-6 col-6'>
+                            <div className='d-flex justify-content-evenly'>{
+                                ele.features.showtimes.map((shows)=>{
+                                   return(
+                                    <div className='me-2' style={{border:'1px solid black',padding:'4px'}}>{shows}</div>
+                                   )
+                                })
+                                }</div>
+                                <div>{''}</div>
+                        </div>
                         </div>
                     )
                    })
