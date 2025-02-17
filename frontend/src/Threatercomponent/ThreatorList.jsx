@@ -33,7 +33,7 @@ function Threatercomponent() {
     useEffect(() => {
 
         threatercall(bookingcity).then((res) => {
-            console.log(res.data)
+            console.log(res.data+'uu')
             setThreaterlist(res.data)
         }).catch((err) => {
             console.log(err)

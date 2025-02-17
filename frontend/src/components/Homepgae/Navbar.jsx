@@ -257,9 +257,8 @@ var moviearray=moviesname.filter((ele) => ele.title.toLowerCase().includes(searc
       }
 
       <div className='Login-popup'>
-        {
-          loginicon === 0 ? <div style={{ position: 'relative', top: '0px', zIndex:6,transform:'scale(0)',transition:'0.2s linear'}}><Login getloginpopoff={getloginpopoff} /></div>:<div style={{ position: 'relative',top:'-60px', zIndex:6,transform:'scale(1)',transition:'0.2s linear'}}><Login getloginpopoff={getloginpopoff} /></div>
-        }
+      {
+          loginicon === 0 ?<>null</>:<div style={{width:'100%',height:'100%',position:'relative',top:'-65px',zIndex:20}}><Login getloginpopoff={getloginpopoff} /></div> }
       </div>
     </div>
 
@@ -268,3 +267,8 @@ var moviearray=moviesname.filter((ele) => ele.title.toLowerCase().includes(searc
 }
 
 export default Navbar;
+
+
+
+{/* <div style={{ position: 'relative', top: '0px', zIndex:60,transform:'scale(0)',transition:'0.2s linear'}}><Login getloginpopoff={getloginpopoff} /></div>:<div style={{ position: 'relative',top:'-100px', zIndex:60,transform:'scale(1)',transition:'0.2s linear'}}><Login getloginpopoff={getloginpopoff} /></div>
+        } */}
