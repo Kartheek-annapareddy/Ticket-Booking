@@ -1,6 +1,5 @@
 import axios  from "axios";
-const apiKey = 'ea82902854df64de97bf78fcce420594';
-const baseUrl = 'https://api.themoviedb.org/3/movie/now_playing'
+
 
   const getAllMovies = async () => {
     let allMovies = [];
@@ -9,15 +8,17 @@ const baseUrl = 'https://api.themoviedb.org/3/movie/now_playing'
 
     while (page <= totalPages) {
       try {
-        const response = await axios.get(baseUrl, {
+        console.log(import.meta.env.VITE_MOVIEURL)
+        const response = await axios.get(import.meta.env.VITE_MOVIEURL, {
           params: {
-            api_key: apiKey,
+            api_key: import.meta.env.VITE_MOVIEKEY,
             region: 'IN',
             language: 'en-US',
             page: page,
             append_to_response: 'credits,videos',
           },
         });
+        console.log(response)
 
         allMovies = [...allMovies, ...response.data.results];
         page += 1;
@@ -26,7 +27,9 @@ const baseUrl = 'https://api.themoviedb.org/3/movie/now_playing'
         break;
       }
     }
+    console.log(allMovies)
     return allMovies;
+    
   };
 
 

@@ -5,7 +5,7 @@ import './movies2.css'
 import { Link } from 'react-router-dom';
 import actionCreater from '../../redux/action';
 import store from '../../redux/store';
-import getallmovies from '../../tmdb/tmdbmovies'
+import getallmovies from '../../asyn/tmdbmovies'
 import { useSelector } from 'react-redux';
 
 

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { Snackbar ,Alert} from '@mui/material';
 import './Selectedmovie.css';
 import Searchicons from '../Homepgae/Searchicons';
-import getAllMovies from '../../tmdb/tmdbmovies';
+import getAllMovies from '../../asyn/tmdbmovies';
 
 function Selectedmovie() {
   const { id } = useParams();
